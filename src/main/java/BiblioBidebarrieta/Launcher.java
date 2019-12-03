@@ -10,7 +10,7 @@ public class Launcher {
 		Scanner reader = new Scanner(System.in);
 		MenuPrincipal menuPrincipal= new MenuPrincipal();
 		int opcion;String nombreArchivo;
-
+		
 		opcion = menuPrincipal.MostrarMenu(reader);
 		nombreArchivo = menuPrincipal.ElegirArchivo(reader, opcion);
 		reader.close();
