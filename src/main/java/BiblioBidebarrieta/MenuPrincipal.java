@@ -1,9 +1,13 @@
 package BiblioBidebarrieta;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuPrincipal {
-
+	ArrayList<String> texto;
+	String ruta;
 	public int MostrarMenu(Scanner reader) {
 		int opcion;
 		
@@ -12,10 +16,8 @@ public class MenuPrincipal {
 		System.out.println("********* MENU ************");
 		System.out.println("Selecciona el tipo de archivo que quieres que lea el programa");
 		System.out.println("1- Archivo .txt");
-		System.out.println("2- Archivo .csv");
-		System.out.println("3- Archivo .xml"+"\n");
 		System.out.println("0- Salir"+"\n");
-		opcion = teclado.EntradaInt(reader,0, 3, "Opcion :");
+		opcion = teclado.EntradaInt(reader,0, 1, "Opcion :");
 		
 		return opcion;
 		
@@ -28,26 +30,25 @@ public class MenuPrincipal {
 		switch(opcion) {
 		
 		case 1:
+			texto = new ArrayList<String>();
+			LectorTxt leerTxt = new LectorTxt();
+			ruta = leerTxt.abrirFichero(nombreFichero= teclado.EntradaTexto(reader,"Indica el Nombre del Archivo txt :"));
+			try {
+				texto = leerTxt.Lector(ruta);
+				for (int i=0;i<texto.size();i++)
+				{
+					System.out.println(texto.get(i).toString());
+				}
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
-			LeerTxt leerTxt = new LeerTxt();
-			leerTxt.abrirFichero(nombreFichero= teclado.EntradaTexto(reader,"Indica el Nombre del Archivo txt :"));
 			break;
 			
-		case 2:
-			
-			System.out.println("Mete el nombre del csv");
-			LeerCsv leerCsv = new LeerCsv();
-			leerCsv.leer_csv(nombreFichero= teclado.EntradaTexto(reader,"Indica el Nombre del Archivo csv :"));
-			break;
-			
-		case 3:
-			
-			LectorXML lector = new LectorXML();
-			lector.abrirFichero("C:\\Workspace\\archivos\\ejemplo.xml");
-			lector.parsearDocumento();
-			lector.cargarNodeList();
-			lector.procesarNodeList();
-			break;		
 			
 		case 0:
 			//cerrar el programa
