@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class MenuPrincipal {
 	ArrayList<String> texto;
@@ -37,7 +38,12 @@ public class MenuPrincipal {
 				texto = leerTxt.Lector(ruta);
 				for (int i=0;i<texto.size();i++)
 				{
-					System.out.println(texto.get(i).toString());
+					System.out.println("******* " + (i + 1) + " LIBRO **********");
+					StringTokenizer st = new StringTokenizer(texto.get(i).toString(),"-");
+		        	
+		        	while (st.hasMoreTokens()) {
+		        		System.out.println(st.nextToken());
+			        }
 				}
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
