@@ -1,5 +1,4 @@
 package BiblioBidebarrieta;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Launcher {
@@ -10,9 +9,10 @@ public class Launcher {
 		Scanner reader = new Scanner(System.in);
 		MenuPrincipal menuPrincipal= new MenuPrincipal();
 		int opcion;String nombreArchivo;
-		
+		do {
 		opcion = menuPrincipal.MostrarMenu(reader);
-		nombreArchivo = menuPrincipal.ElegirArchivo(reader, opcion);
+		menuPrincipal.ElegirArchivo(reader, opcion);
+		}while (opcion!=0);
 		reader.close();
 	}
 }
