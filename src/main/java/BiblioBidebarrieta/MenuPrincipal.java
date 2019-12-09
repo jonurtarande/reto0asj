@@ -32,6 +32,7 @@ public class MenuPrincipal {
 		
 		case 1:
 			texto = new ArrayList<String>();
+			
 			LectorTxt leerTxt = new LectorTxt();
 			ruta = leerTxt.abrirFichero(nombreFichero= teclado.EntradaTexto(reader,"Indica el Nombre del Archivo txt :"));
 			try {
@@ -40,9 +41,10 @@ public class MenuPrincipal {
 				{
 					System.out.println("******* " + (i + 1) + " LIBRO **********");
 					StringTokenizer st = new StringTokenizer(texto.get(i).toString(),"-");
-		        	
+					//ArrayList libros = new ArrayList<Libro>();
 		        	while (st.hasMoreTokens()) {
-		        		System.out.println(st.nextToken());
+
+		        		System.out.println(st.nextToken().replace(" +", " ").trim());
 			        }
 				}
 			} catch (FileNotFoundException e) {
