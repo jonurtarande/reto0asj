@@ -1,4 +1,6 @@
-package BiblioBidebarrieta;
+package main.java.Biblio1;
+
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,8 +19,10 @@ import java.util.ArrayList;
 	    public ArrayList<String> Lector(String ruta) throws FileNotFoundException, IOException {
 	        String cadena;
 	        ArrayList<String> texto=new ArrayList<String>();
+	        
 	        BufferedReader b = new BufferedReader(new FileReader(ruta));
 	        while((cadena = b.readLine())!=null) {
+	        	cadena.replaceAll("\\s{2,}", " ").trim();
 	            texto.add(cadena);
 	        }
 	        b.close();

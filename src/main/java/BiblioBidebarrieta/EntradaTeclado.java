@@ -1,4 +1,5 @@
-package BiblioBidebarrieta;
+package main.java.Biblio1;
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
