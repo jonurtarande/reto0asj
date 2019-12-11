@@ -1,4 +1,4 @@
-package main.java.Biblio1;
+package BiblioBidebarrieta;
 
 
 import java.util.Scanner;

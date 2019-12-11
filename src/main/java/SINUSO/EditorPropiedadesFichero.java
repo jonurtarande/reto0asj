@@ -1,4 +1,4 @@
-package util.ficheros;
+package SINUSO;
 
 import java.io.File;
 import java.io.IOException;

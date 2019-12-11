@@ -1,4 +1,4 @@
-package main.java.Biblio1;
+package BiblioBidebarrieta;
 
 
 import java.util.InputMismatchException;
@@ -23,7 +23,7 @@ public class EntradaTeclado {
 	public int EntradaInt(Scanner reader,int valorMin,int valorMax, String texto ) {
 		
 		
-		//Declaracion e inicialización de variables
+		//Declaracion e inicializaciï¿½n de variables
 		int opcion = 0;
 		boolean opcionCorrecta = false; 
 		//Inicio de programa
@@ -35,7 +35,7 @@ public class EntradaTeclado {
 				opcion=reader.nextInt();
 				while(opcion < valorMin || opcion > valorMax)
 				{
-					System.out.println("Introduce un valor númerico entre "+valorMin+" y "+valorMax);
+					System.out.println("Introduce un valor nï¿½merico entre "+valorMin+" y "+valorMax);
 					opcion=reader.nextInt();
 				}
 				reader.nextLine();
@@ -43,7 +43,7 @@ public class EntradaTeclado {
 			}
 			catch(InputMismatchException ex)
 			{
-				System.out.println("Introduce un valor númerico entre "+valorMin+" y "+valorMax);
+				System.out.println("Introduce un valor nï¿½merico entre "+valorMin+" y "+valorMax);
 				reader.nextLine();
 			}
 			

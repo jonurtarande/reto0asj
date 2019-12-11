@@ -1,4 +1,4 @@
-package main.java.Biblio1;
+package BiblioBidebarrieta;
 
 
 
@@ -69,7 +69,7 @@ public class MenuPrincipal {
 		case 2:
 			for (int i = 0;i<libros.size();i++)
 			{
-				System.out.println(libros.toString());
+				System.out.println(libros.get(i).toString());
 			}
 		case 0:
 			//cerrar el programa
